@@ -65,7 +65,7 @@
             
                   <td class= "brandId">${Object.keys(responseJson)[0]}</th>
             
-                  <td class= "servingH tooltip quant">${Math.round(responseJson.common[i].serving_qty)}<span class="tooltiptext"><input type="number" class = "adjust" min="0" step="0.1">Serving Quantity</span></td>
+                  <td class= "servingH tooltip quant">${Math.round(responseJson.common[i].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
             
                   <td class= "unitH">${responseJson.common[i].serving_unit}</td>
             
@@ -73,35 +73,7 @@
             
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.common[i].full_nutrients[4].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
             
-                  <td class= "caloriesH cal tooltip calG">${calPer100g}</td>
-
-                  <td class= "add">
-                  
-                  <div class= "scrollTable"> 
-
-                    <label class="container black">Escalante
-                      <input type="checkbox" >
-                      <span class="checkmark"></span>
-                    </label>
-                    
-                    <label class="container black">Muktinath
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    
-                    <label class="container black">Tende
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-
-                      <label class="container black"><a href="#new">Start new</a>
-                </label>
-                    
-                  </div>
-                  </td>
-
-
-                </tr>`
+                  <td class= "caloriesH cal tooltip calG">${calPer100g}</tr>`
           )
               
         }
@@ -136,7 +108,7 @@
             
                   <td class= "brandId">${responseJson.branded[j].brand_name}</th>
             
-                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext"><input type="number" class = "adjust" min="0" step="0.1">Serving Quantity</span></td>
+                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
             
                   <td class= "unitH">${responseJson.branded[j].serving_unit}</td>
             
@@ -144,42 +116,20 @@
             
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.branded[j].full_nutrients[3].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
             
-                  <td class= "caloriesH cal tooltip calG">${calPer100gB}</td>
-
-                  <td class= "add"><div class= "scrollTable"> 
-
-                  <label class="container black">Escalante
-                    <input type="checkbox" >
-                    <span class="checkmark"></span>
-                  </label>
-                  
-                  <label class="container black">Muktinath
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                  
-                  <label class="container black">Tende
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="container black"><a href="#new">Start new</a>
-                </label>
-                  
-                </div>
-                  </td>
-            </tr>`)
+                  <td class= "caloriesH cal tooltip calG">${calPer100gB}
+            </tr>` 
+        )
 
         // append branded food to brand only results table 
        $('#resultsB').append(
         `<tr class= "one whiteBackground black">
                   <td class= "imageH"><img class= "tableImage" src=${responseJson.branded[j].photo.thumb} alt= "Item image"></td>
   
-                  <td class= "itemH">${responseJson.branded[j].food_name}</td>
+                  <td class= "itemH">${responseJson.branded[j].food_name}</th>
   
-                  <td class= "brandId">${responseJson.branded[j].brand_name}</td>
+                  <td class= "brandId">${responseJson.branded[j].brand_name}</th>
   
-                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext"><input type="number" class = "adjust" min="0" step="0.1">Serving Quantity</span></td>
+                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
   
                   <td class= "unitH">${responseJson.branded[j].serving_unit}</td>
   
@@ -187,33 +137,7 @@
   
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.branded[j].full_nutrients[3].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
   
-                <td class= "caloriesH cal tooltip calG">${calPer100gB}</td>
-
-                <td class= "add"><div class= "scrollTable"> 
-
-                <label class="container black">Escalante
-                  <input type="checkbox" >
-                  <span class="checkmark"></span>
-                </label>
-                
-                <label class="container black">Muktinath
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                
-                <label class="container black">Tende
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-
-                <label class="container black"><a href="#new">Start new</a>
-                </label>
-              </label>
-
-
-                
-              </div>
-                </td>
+                <td class= "caloriesH cal tooltip calG">${calPer100gB}
         </tr>`)
             
       }
@@ -383,65 +307,3 @@
     $('#js-PrintB').click(function() {
     window.print()
 })
-
-
-var total = 158,
-    buttons = document.querySelector('.buttons'),
-    pie = document.querySelector('.pie'),
-    activeClass = 'active';
-
-var continents = {
-  asia: 60,
-  northAmerica : 5,
-  southAmerica: 9,
-  oceania: 1,
-  africa: 15,
-  europe: 12
-};
-
-// work out percentage as a result of total
-var numberFixer = function(num){
-  var result = ((num * total) / 100);
-  return result;
-}
-
-// create a button for each country
-for(property in continents){
-  var newEl = document.createElement('button');
-  newEl.innerText = property;
-  newEl.setAttribute('data-name', property);
-  buttons.appendChild(newEl);
-}
-
-// when you click a button setPieChart and setActiveClass
-  buttons.addEventListener('click', function(e){
-    if(e.target != e.currentTarget){
-      var el = e.target,
-          name = el.getAttribute('data-name');
-      setPieChart(name);
-      setActiveClass(el);
-    }
-    e.stopPropagation();
-  });
-
-var setPieChart = function(name){
-  var number = continents[name],
-      fixedNumber = numberFixer(number),
-      result = fixedNumber + ' ' + total;
-  
-  pie.style.strokeDasharray = result;
-}
-
-var setActiveClass = function(el) {
-  for(var i = 0; i < buttons.children.length; i++) {
-    buttons.children[i].classList.remove(activeClass);
-    el.classList.add(activeClass);
-  }
-}
-
-// Set up default settings
-setPieChart('asia');
-setActiveClass(buttons.children[0]);
-
-
-Resources
