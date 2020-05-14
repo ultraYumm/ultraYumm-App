@@ -123,8 +123,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 @font-face {
   font-family: 'Montebello-Sans';
   src: url('Font/Montebello-Sans.ttf') format('truetype');
@@ -138,7 +136,6 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Montebello-Sans',truetype;
 font-weight: lighter6
 }
-
 
 body {
   font-size: 14px;
@@ -178,9 +175,6 @@ nav {
   padding: 5px;
 }
 
-span {
-  padding-right: 10px;
-}
 .navbar {
   position: fixed;
   top: 0;
@@ -330,11 +324,10 @@ input {
   margin-left: 4px;
 }
 
-input[type=date] {
-  width: 350px;
+input[type=number] {
+  width: 150px;
   margin-top: 4px;
 }
-
 
 input::placeholder { 
   color: rgba(242, 230, 223);
@@ -344,22 +337,8 @@ input:hover, input:active {
   border: 1px solid rgba(3, 52, 115);
 }
 
-input[type="search"]{
-  width: 100%;
-}
-
 input[type="text"]{
-  width: 15%;
-  text-align: left
-}
-
-.names {
-  width: 20%;
-  margin-bottom: -50px;
-}
-
-input[type="date"]{
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 
 input[type="submit"]{
@@ -414,15 +393,6 @@ button:hover
   transition-timing-function: ease-in;
   z-index: 400;
 }
-
-.about {
-  margin-top: 10px;
-  margin-right: 100px;
-  right: 0;
-  position: fixed;
-  z-index: 100;
-}
-  
 
 @keyframes slidein {
   from {
@@ -571,177 +541,6 @@ padding-top: 200px;
 }
 
 
-.trips {
-  text-align: center;
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.tripImage {
-  object-position: center;
-  width: 300px;
-  height: 200px;
-  float: left;
-  border-radius: 50px
-}
-
-.tripLi {
-  padding-bottom: 20px;
-  }
-
-
-.trip {
-  font-size: 40px;
-  float: right;
-  margin-top:-100px; 
-  height: 70px;
-  padding-left: 10px
-  }
-
-
-.filter {
-    margin-top: 10px;
-}
-
-
-.filterName {
-    text-align: left
-}
-
-
-
-.filterSelection {
-  width: 24%;
-  height: 100px;
-  display: inline-block;
-}  
-
-
-.detailLabel {
-  width: 20%;
-  height: 80px;
-  display: inline-block;
-}  
-
-
-.detailInput {
-  width: 10%;
-  height: 80px;
-  display: inline-block;
-  margin-left: auto;
-  padding-left: 10px
-  
-}
-
-
-.detailInputName {
-  width: 40%;
-  height: 80px;
-  display: inline-block;
-  margin-left: auto;
-  padding-left: 10px
-  
-}  
-
-
-
-.main {
-  font-size: 0;
- 
-}
-
-
-/* Customize the label (the container) */
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color:  rgba(242, 76, 61, 1); 
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-}
-
-
-div.scroll {
-  height: 225px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin-right: 40px;
-}
-
-
-
-
-div.scrollTable {
-  height: 30px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-div.scrollInput {
-  height: 80px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin-bottom: -50px;
-}
-
 @media only screen and (min-width: 320px) {
 
 
@@ -757,13 +556,6 @@ div.scrollInput {
   font-size: 20px;
 }
 
-h2 {
-  font-size: 45px;
-  text-align: center;
-  margin-bottom: -20px;
-  padding-top: 70px;
-}
-  
 h3 {
   font-size: 20px;
 }
@@ -795,7 +587,7 @@ table,th, tr, thead {
   padding-bottom: 65px;
 }
 
-input[type="search"]{
+input[type="text"]{
   width: 90%;
 }
 
@@ -808,7 +600,7 @@ nav {
 }
 
 .uYtitle {
-  width: 30%;
+  width:30%;
   display: block;
   padding-top: 30px;
   margin-left: auto;
@@ -876,7 +668,7 @@ label {
   font-size: 19px;
 }
 
-input[type="search"]{
+input[type="text"]{
   width: 70%;
 }
 
@@ -954,7 +746,7 @@ label {
 }
 
 
-input[type="search"]{
+input[type="text"]{
   width: 80%;
 }
 
@@ -1054,10 +846,10 @@ input[type="submit"]{
   border-radius: 5px;
   padding: 1px;
   transition: 0.1s;
-  margin-top: 5px;
+  margin-top: 50px;
 }
 
-input[type="search"]{
+input[type="text"]{
   width: 55%;
 }
 
@@ -1075,101 +867,4 @@ button, .button {
 }
 
 
-}
-
-
-.bar {
-  fill: rgba(242, 76, 61, 1);  /* changes the background */
-  height: 21px;
-  transition: fill .3s ease;
-  cursor: pointer;
-  font-family: Helvetica, sans-serif;
-}
-
-.bar text {
-  color: black;
-}
-.bar:hover,
-.bar:focus {
-  fill: black;
-}
-.bar:hover text,
-.bar:focus text {
-  fill: rgba(242, 76, 61, 1); 
-}
-
-.chart{
-  padding-left: 100px;
-  padding-top: 20px;
-  
-}
-
-.pack {
-    float: right;
-    font-weight: bolder;
-  
-}
-
-.pack:hover {
-  float: right;
-  fill:black; 
-
-
-}
-
-text {
-  font-size: 30px;
-  
-}
-
-
-.deleteH {
-  background-color: rgba(242, 76, 61, 1); 
-  
-}
-.delete:hover {
-  background-color: rgba(242, 76, 61, 1); 
-  zoom:0.9;
-  text-align: center;
-}
-
-input.delete {
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(242, 76, 61, 1); 
-}
-
-input.adjust {
-  text-align: center;
-  width: 80px;
-  height: 50px;
-  background-color: rgba(242, 230, 223);
-}
-
-
-.addH {
-  background-color:rgba(49, 31, 115)
-  
-}
-.add:hover {
-  background-color: lightpink;
-  zoom:0.9;
-  text-align: center;
-}
-
-input.add {
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(49, 31, 115)
-}
-
-.itemDetails {
-  text-align:left;
-}
- 
-.result {
-  background-color: lightpink;
-  color: black
 }
